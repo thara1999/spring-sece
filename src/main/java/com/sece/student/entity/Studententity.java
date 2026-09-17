@@ -1,11 +1,10 @@
 package com.sece.student.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence .Id;
 
 @Entity
 public class Studententity {
-
     @Id
     private int id;
 
@@ -13,9 +12,11 @@ public class Studententity {
     private String department;
     private int age;
 
+    // No-arg constructor (required by JPA)
     public Studententity() {
     }
 
+    // Parameterized constructor
     public Studententity(int id, String name, String department, int age) {
         this.id = id;
         this.name = name;
@@ -23,6 +24,7 @@ public class Studententity {
         this.age = age;
     }
 
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -53,5 +55,16 @@ public class Studententity {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    // Optional: toString() for easy debugging
+    @Override
+    public String toString() {
+        return "Studententity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", department='" + department + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
